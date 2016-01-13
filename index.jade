@@ -1,39 +1,163 @@
 extends _layout.jade
 
 block content
-	section#intro
-		ul.bg-slider
+	section
+		//- ul.bxslider
+		//- 	li
+		//- 		img(src="images/slider/intro-slider-a-template.png")
+		//- 	li
+		//- 		img(src="images/slider/intro-slider-a-template.png")
+
+	section.restrict
+		h1 Typography
+		h1 h1
+		h2 h2
+		h3 h3
+		h4 h4
+		h5 h5
+		h6 h6
+
+		h1 Paragraph
+		h2 Justify - .justfy
+		p.justify
+			+lipsum(5, "paragraphs")
+		h2 Justify - normal
+		p
+			+lipsum(5, "paragraphs")
+		h1 Restrictions
+		p layout/_320.scss
+		.restrict
+			h2 .restrict
+			p
+				+lipsum(3, "paragraphs")
+		.restrict-small
+			h2 .restrict-small
+			p
+				+lipsum(3, "paragraphs")
+		.restrict-tiny
+			h2 .restrict-tiny
+			p
+				+lipsum(3, "paragraphs")
+
+		h1 Grid
+		.col.centered
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-11-12(style="background-color: #eeeeee; margin-bottom: .5em;") 11
+		.col.centered
+			.grid.g-2-12(style="background-color: #eeeeee; margin-bottom: .5em;") 2
+			.grid.g-10-12(style="background-color: #eeeeee; margin-bottom: .5em;") 10
+		.col.centered
+			.grid.g-3-12(style="background-color: #eeeeee; margin-bottom: .5em;") 3
+			.grid.g-9-12(style="background-color: #eeeeee; margin-bottom: .5em;") 9
+		.col.centered
+			.grid.g-4-12(style="background-color: #eeeeee; margin-bottom: .5em;") 4
+			.grid.g-8-12(style="background-color: #eeeeee; margin-bottom: .5em;") 8
+		.col.centered
+			.grid.g-5-12(style="background-color: #eeeeee; margin-bottom: .5em;") 5
+			.grid.g-7-12(style="background-color: #eeeeee; margin-bottom: .5em;") 7
+		.col.centered
+			.grid.g-4-12(style="background-color: #eeeeee; margin-bottom: .5em;") 4
+			.grid.g-4-12(style="background-color: #eeeeee; margin-bottom: .5em;") 4
+			.grid.g-4-12(style="background-color: #eeeeee; margin-bottom: .5em;") 4
+		.col.centered
+			.grid.g-3-12(style="background-color: #eeeeee; margin-bottom: .5em;") 3
+			.grid.g-3-12(style="background-color: #eeeeee; margin-bottom: .5em;") 3
+			.grid.g-3-12(style="background-color: #eeeeee; margin-bottom: .5em;") 3
+			.grid.g-3-12(style="background-color: #eeeeee; margin-bottom: .5em;") 3
+		.col.centered
+			.grid.g-2-12(style="background-color: #eeeeee; margin-bottom: .5em;") 2
+			.grid.g-2-12(style="background-color: #eeeeee; margin-bottom: .5em;") 2
+			.grid.g-2-12(style="background-color: #eeeeee; margin-bottom: .5em;") 2
+			.grid.g-2-12(style="background-color: #eeeeee; margin-bottom: .5em;") 2
+			.grid.g-2-12(style="background-color: #eeeeee; margin-bottom: .5em;") 2
+			.grid.g-2-12(style="background-color: #eeeeee; margin-bottom: .5em;") 2
+		.col.centered
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+			.grid.g-1-12(style="background-color: #eeeeee; margin-bottom: .5em;") 1
+		h2 Grid-in-grid
+		.col.centered
+			.grid.g-3-12(style="background-color: #eeeeee; margin-bottom: .5em;")
+				.col
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+					.grid.g-1-12(style="background-color: #666666;") 1
+			.grid.g-9-12(style="background-color: #eeeeee; margin-bottom: .5em;")
+				.col
+					.grid.g-4-12(style="background-color: #666666;") 4
+					.grid.g-4-12(style="background-color: #666666;") 4
+					.grid.g-4-12(style="background-color: #666666;") 4
+		h1 Align
+		p.centered(style="background-color: #cccccc;") .centered
+		p.left(style="background-color: #cccccc;") .left
+		p.right(style="background-color: #cccccc;") .right
+		h1 Form
+		.controlgroup
+			label Label
+			.controls
+				input(type="text", placeholder="placeholder")
+		.controlgroup
+			label Label
+			.controls
+				input(type="text", placeholder="placeholder")
+		h2 Search
+		.controlgroup
+			label Label
+			.controls
+				input(type="search", placeholder="placeholder")
+		h2 Select
+		.controlgroup
+			label Label
+			.controls
+				select
+					option option 1
+					option option 1
+					option option 1
+					option option 1
+		h2 Textarea
+		.controlgroup
+			label Label
+			.controls
+				textarea(placeholder="placeholder")
+		h2 Buttons -.btn
+		p _button.scss
+		a.btn.basic(href="javascript:;") basic
+		a.btn.frame(href="javascript:;") frame
+		a.btn.reverse(href="javascript:;") reverse
+		h2 Call Action
+		.call-action
+			p .call-action
+			a.btn.basic(href="javascript:;") basic
+			a.btn.frame(href="javascript:;") frame
+			a.btn.reverse(href="javascript:;") reverse
+			a.btn.yellow.gradient(href="javascript:;") yellow.gradient
+		h1 List
+		p base.scss
+		h2 ul li
+		ul
 			li
-				//- iframe(width="560" height="315" src="https://www.youtube.com/embed/GFIszvh5Uzg?autoplay=1" frameborder="0" allowfullscreen)
-			//- li(style='background-image: url(assets/images/slider/slide-1.png);')
-			//- li(style='background-image: url(assets/images/slider/slide-2.png);')
-			//- li(style='background-image: url(assets/images/slider/slide-3.png);')
-			//- li(style='background-image: url(assets/images/slider/slide-4.png);')
-		#brand
-			.brand-icon
-				img(src='assets/images/brand/brand.svg')
-			.caption est. 2015 middlemiddle kids.
-				br
-				| All Rights Reserved.
-		#sharebar
-			ul
-				li
-					a.facebook(href='https://www.facebook.com/middlemiddlekids' target='_blank')
-				li
-					a.instagram(href='https://www.instagram.com/middlemiddlekids/' target='_blank')
-				li
-					a.email(href='mailto:service@middlemiddle.com' target='_blank')
-						//- img(src='assets/images/icons/facebook.png')
-		#cover
-			.cover-inner
-				.slogan For 
-					span kids,
-					br
-					|	and
-					span  their parents.
-					.cht 快樂的孩子，愉快的週末 - 無價。
-					.reservation
-						p Reservation
-							br
-							span 04-24371266
-block footer
+				a(href="javascript:;")
+					+lipsum(3, "words")
+		h2 ol li
+		ol
+			li
+				a(href="javascript:;")
+					+lipsum(3, "words")

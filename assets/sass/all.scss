@@ -25,6 +25,8 @@
 
 //Vars
 @import "lib/var/var";
+//Icons
+@import "lib/sprite";
 @import "lib/var/components";
 //Basic Settings
 @import "lib/base";
@@ -43,4 +45,4 @@
 @import "lib/plugins/jquery.bxslider";
 @import "lib/plugins/magnific-popup";
 //Icons
-// @import "lib/icons";
+@import "lib/icons";

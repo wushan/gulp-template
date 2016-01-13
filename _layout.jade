@@ -1,33 +1,37 @@
+include mixin/_mixin
 doctype html
 html(lang="zh-TW")
 	head
 		meta(charset="utf-8")
 		meta(content="width=device-width, initial-scale=1.0", name="viewport")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
-		meta(property="og:title" content="middlemiddle 中中親子樂園")
-		meta(property="og:site_name" content="middlemiddle 中中親子樂園")
-		meta(property="og:url" content="http://middlemiddle.com")
-		meta(property="og:image" content="http://middlemiddle.com/assets/images/middlemiddlekids-og-image.jpg")
-		meta(property="og:description" content="台中最棒的親子空間")
-		link(type='image/x-icon' href='/assets/images/favicon.ico')
+		meta(property="og:title" content="")
+		meta(property="og:site_name" content="")
+		meta(property="og:url" content="")
+		meta(property="og:image" content="")
+		meta(property="og:description" content="")
+		link(type='image/x-icon' href="")
 
 		block pagetitle
 			title Untitiled Project
+		//-StyleSheets
 		link(href='assets/stylesheets/all.css', type='text/css', rel='stylesheet')
-		link(href='http://vjs.zencdn.net/5.0.2/video-js.css', type='text/css', rel='stylesheet')
 
 	body
-		header
-		main
+		#sb-site
 			#wrapper
-				block content
-					p this page is empty.
-				block footer
-					#footer
-						p middlemiddle Co.,Ltd. 2015
+				include partials/navigator
+				main
+					block content
+						p this page is empty.
+				footer
+					block footer
+						#footer
+							p footer message
 
-			block scripts
-				script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
-				script(src='assets/javascripts/app.min.js')
-				script(src='http://vjs.zencdn.net/5.0.2/video.js')
-				//- script(src='http://localhost:35729/livereload.js')
+		.sb-slidebar.sb-left
+			include partials/navigator-slide
+
+		//-Scripts
+		block scripts
+			script(src='assets/javascripts/app.min.js')
