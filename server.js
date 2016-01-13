@@ -1,20 +1,14 @@
-//Build Server
-var express = require("express");
-var app = express();
-var http = require('http').Server(app);
-var port = 3700;
-//Mods
-var io = require('socket.io')(http);
+// ---- 基本設定 ----
+var express = require('express');
+var app     = express();
+var path = require('path');
+var port    = process.env.PORT || 3700;
 
-//Send To FrontEnd
-app.get("/", function(req, res){
-  res.sendFile(__dirname + '/dist/index.html');
+app.use(express.static( path.join(__dirname, 'dist')));
+
+app.get('/', function(req, res) {
+    res.sendfile('index.html');
 });
 
-app.use(express.static('./dist/assets'));
-app.use(require('connect-livereload')({port: 35729}));
-
-//Start HTTP
-http.listen(port, function(){
-  console.log('listening on *:' + port);
-});
+// ---- 啟動伺服器 ----
+app.listen(port);
