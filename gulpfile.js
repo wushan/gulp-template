@@ -88,6 +88,7 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
   gulp.watch('assets/javascripts/**/*.js', ['scripts']);
   gulp.watch('assets/sass/**/*.scss', ['styles']);
+  gulp.watch('assets/images/**/*.*', ['image']);
   gulp.watch('**/*.jade', ['jade']);
   gulp.watch('dist/*.html', notifyLiveReload);
   gulp.watch('dist/assets/stylesheets/**/*.css', notifyLiveReload);
