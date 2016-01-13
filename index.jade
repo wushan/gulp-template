@@ -1,2 +1,43 @@
-section.
-	play3ss
+extends _layout.jade
+
+block content
+	section#intro
+		ul.bg-slider
+			li
+				//- iframe(width="560" height="315" src="https://www.youtube.com/embed/GFIszvh5Uzg?autoplay=1" frameborder="0" allowfullscreen)
+			//- li(style='background-image: url(assets/images/slider/slide-1.png);')
+			//- li(style='background-image: url(assets/images/slider/slide-2.png);')
+			//- li(style='background-image: url(assets/images/slider/slide-3.png);')
+			//- li(style='background-image: url(assets/images/slider/slide-4.png);')
+		#brand
+			.brand-icon
+				img(src='assets/images/brand/brand.svg')
+			.caption est. 2015 middlemiddle kids.
+				br
+				| All Rights Reserved.
+		#sharebar
+			ul
+				li
+					a.facebook(href='https://www.facebook.com/middlemiddlekids' target='_blank')
+				li
+					a.instagram(href='https://www.instagram.com/middlemiddlekids/' target='_blank')
+				li
+					a.email(href='mailto:service@middlemiddle.com' target='_blank')
+						//- img(src='assets/images/icons/facebook.png')
+		#cover
+			.cover-inner
+				.slogan For 
+					span kids,
+					br
+					|	and
+					span  their parents.
+					.cht 快樂的孩子，愉快的週末 - 無價。
+					.reservation
+						p Reservation
+							br
+							span 04-24371266
+block footer
+block scripts
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+	script(src='/assets/javascripts/build.min.js')
+	script(src='http://localhost:35729/livereload.js')

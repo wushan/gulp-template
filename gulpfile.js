@@ -7,9 +7,7 @@ var gulp = require('gulp'),
         uglify = require('gulp-uglify'),
         concat = require('gulp-concat');
 
-gulp.task('express', function() {
-  var server = require('./server');
-});
+
 
 var tinylr;
 gulp.task('livereload', function() {
@@ -50,23 +48,23 @@ gulp.task('jade', function() {
 
 // Scripts
 gulp.task('scripts', function() {
-  return gulp.src('dev/assets/javascripts/**/*.js')
+  return gulp.src('assets/javascripts/**/*.js')
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('assets/javascripts'))
+    .pipe(gulp.dest('dist/assets/javascripts'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest('assets/javascripts'));
+    .pipe(gulp.dest('dist/assets/javascripts'));
 });
 
 
 gulp.task('watch', function() {
-  gulp.watch('dev/assets/javascripts/**/*.js', ['scripts']);
-  gulp.watch('dev/assets/sass/**/*.scss', ['styles']);
-  gulp.watch('dev/view/*.jade', ['jade']);
-  gulp.watch('*.html', notifyLiveReload);
-  gulp.watch('assets/stylesheets/**/*.css', notifyLiveReload);
+  gulp.watch('assets/javascripts/**/*.js', ['scripts']);
+  gulp.watch('assets/sass/**/*.scss', ['styles']);
+  gulp.watch('*.jade', ['jade']);
+  gulp.watch('dist/*.html', notifyLiveReload);
+  gulp.watch('dist/assets/stylesheets/**/*.css', notifyLiveReload);
 });
 
-gulp.task('default', ['jade', 'scripts', 'styles', 'express', 'livereload', 'watch'], function() {
+gulp.task('default', ['jade', 'scripts', 'styles', 'livereload', 'watch'], function() {
 
 });

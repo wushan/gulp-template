@@ -12,6 +12,7 @@ app.get("/", function(req, res){
 });
 
 app.use(express.static('./dist/assets'));
+app.use(require('connect-livereload')({port: 35729}));
 
 //Start HTTP
 http.listen(port, function(){
