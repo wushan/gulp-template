@@ -11,7 +11,9 @@ var gulp = require('gulp'),
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 
-
+gulp.task('express', function() {
+  var server = require('./server');
+});
 
 var tinylr;
 gulp.task('livereload', function() {
@@ -43,13 +45,15 @@ gulp.task('styles', function() {
 //Make Sprites
 gulp.task('sprite', function() {
     var spriteData = 
-        gulp.src('assets/images/icons/*.*') // source path of the sprite images
+        gulp.src('assets/images/icons/*.png') // source path of the sprite images
             .pipe(spritesmith({
+                retinaSrcFilter: ['assets/images/icons/*@2x.png'],
                 imgName: '../sprite.png',
+                retinaImgName: '../sprite@2x.png',
                 cssName: 'sprite.scss',
             }));
 
-    spriteData.img.pipe(gulp.dest('dist/assets/images/')); // output path for the sprite
+    spriteData.img.pipe(gulp.dest('dist/assets/images')); // output path for the sprite
     spriteData.css.pipe(gulp.dest('assets/sass/lib/')); // output path for the CSS
 });
 
@@ -90,10 +94,12 @@ gulp.task('watch', function() {
   gulp.watch('assets/sass/**/*.scss', ['styles']);
   gulp.watch('assets/images/**/*.*', ['image']);
   gulp.watch('**/*.jade', ['jade']);
-  gulp.watch('dist/*.html', notifyLiveReload);
+  gulp.watch('dist/assets/images/**/*.*', notifyLiveReload);
+  gulp.watch('dist/**/*.js', notifyLiveReload);
+  gulp.watch('dist/**/*.html', notifyLiveReload);
   gulp.watch('dist/assets/stylesheets/**/*.css', notifyLiveReload);
 });
 
-gulp.task('default', ['jade', 'scripts','image', 'styles', 'sprite', 'livereload', 'watch'], function() {
+gulp.task('default', ['express', 'jade', 'scripts', 'sprite', 'image', 'styles', 'livereload', 'watch'], function() {
 
 });

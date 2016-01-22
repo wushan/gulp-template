@@ -7,7 +7,7 @@ var port    = process.env.PORT || 3700;
 app.use(express.static( path.join(__dirname, 'dist')));
 
 app.get('/', function(req, res) {
-    res.sendfile('index.html');
+    res.sendFile('index.html');
 });
 
 // ---- 啟動伺服器 ----
